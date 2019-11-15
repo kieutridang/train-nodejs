@@ -1,5 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1.text-center My Tasks
+  form(method='POST', action='/addtask')
+    .input-group
+      input.form-control(type='text', placeholder='Let enter Task', name='item')
+      span.input-group-btn
+        input.btn.btn-success(type='submit', value='Add task')
