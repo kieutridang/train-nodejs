@@ -4,6 +4,11 @@ block content
   h1.text-center My Tasks
   form(method='POST', action='/addtask')
     .input-group
-      input.form-control(type='text', placeholder='Let enter Task', name='item')
+      input.form-control(type='text', placeholder='Enter task to add', name='item')
       span.input-group-btn
         input.btn.btn-success(type='submit', value='Add task')
+  form(method='POST', action='/searchtask')
+    .input-group
+      input.form-control(type='text', placeholder='Enter task id to search', name='id')
+      span.input-group-btn
+        input.btn.btn-success(type='submit', value='Search')
