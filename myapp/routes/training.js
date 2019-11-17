@@ -16,9 +16,9 @@ router.get('/getalltasks', function(req, res, next) {
 });
 
 /* GET specific task by ID*/
-router.post('/searchtask', function(req, res, next) {
-  console.dir(req.body.id);
-  var searchId = req.body.id;
+router.get('/searchtaskbyid', function(req, res, next) {
+  console.dir(req.query.taskId);
+  var searchId = req.query.taskId;
   for (var i=0; i<taskList.length; i++) {
     if (taskList[i].taskId == searchId) {
       var taskFound = taskList[i].taskName;
