@@ -22,7 +22,7 @@ router.post('/searchtask', function(req, res, next) {
   for (var i=0; i<taskList.length; i++) {
     if (taskList[i].taskId == searchId) {
       var taskFound = taskList[i].taskName;
-      res.send({taskFound});
+      res.send('Task found: ' + taskFound);
     };
   };
   res.send('No task found !!!');
