@@ -3,13 +3,12 @@ var router = express.Router();
 
 var taskList = [];
 
-function editTask (tasklist, id, newTask) {
+function editTask (tasklist, id) {
   var position = tasklist.findIndex(task => task.taskId == id);
   if(position === -1) {
           return null;
   }
-  taskList[position].taskName = newTask;
-  return taskList
+  return position;
 }
 
 function deleteTask (tasklist, id) {
@@ -40,7 +39,8 @@ router.get('/search-task-by-id', function(req, res, next) {
 
 /* EDIT task */
 router.post('/edit-task', function(req, res, next) {
-  editTask(taskList,req.query.taskId,req.body.item);
+  var position = editTask(taskList,req.query.taskId);
+  taskList[position].taskName = req.body.item;
   res.redirect('/');
 });
 
