@@ -9,6 +9,8 @@ var usersRouter = require('./routes/users');
 var trainingRouter = require('./routes/training');
 var authRouter = require('./routes/auth');
 
+var mainRouter = require('./routes/index');
+
 var authorize = require('./utils/authorize');
 
 var app = express();
@@ -27,7 +29,9 @@ app.use(cookieParser());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
-app.use('/', authorize, trainingRouter);
+// app.use('/', authorize, trainingRouter);
+
+app.use('/api', mainRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
