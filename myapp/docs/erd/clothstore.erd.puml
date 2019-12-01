@@ -32,7 +32,8 @@ entity "Product" as Product {
     *name : String
     *price : String
     *imageURL : String
-    *stock : String
+    *stock : Boolean
+    *status: Boolean
     description : String
 }
 
@@ -42,6 +43,7 @@ entity "Order" as Order {
     *clientId : ObjectId
     *storeId: ObjectId
     --
+    *status: String
     *totalPrice : Number
     *tax : Number
     discount : Number
@@ -60,8 +62,8 @@ entity "ProductInOrder" as ProductInOrder {
     *orderId : ObjectId
     *productId : ObjectId
     --
+    *qty : Number
     price : Number
-    qty : Number
 }
 
 AdminOfStore --|| Admin

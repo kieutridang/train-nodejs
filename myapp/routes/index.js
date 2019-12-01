@@ -1,6 +1,10 @@
-var express = require('express');
-var router = express.Router();
-var adminRouter = require('./admin');
+const express = require('express');
+const router = express.Router();
+const adminRouter = require('./Admin');
+const productRouter = require('./Product');
+const orderRouter = require('./Order');
+
+const authorize = require('../utils/authorize');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -8,5 +12,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.use('/admin', adminRouter);
+router.use('/product', authorize, productRouter);
+router.use('/order', authorize, orderRouter);
 
 module.exports = router;

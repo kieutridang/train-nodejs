@@ -1,10 +1,8 @@
-var bcrypt = require('bcrypt');
-var jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
+const Admin = require('../models/Admin');
 
-const privateKey = 'newPrivateKey';
 
-function authorize(req, res, next) {
-    const users = req.app.users;
+async function authorize(req, res, next) {
     // TODO: Validate access token
     const { accesstoken } = req.headers;
     if (!accesstoken) {
@@ -13,7 +11,7 @@ function authorize(req, res, next) {
         return;
     }
     // TODO: Verify access token
-    const isValidToken = users.some(user => user.accessToken === accesstoken);
+    const isValidToken = await Admin.exists({ accessToken: accesstoken })
     if (isValidToken) {
         next();
     } else {
