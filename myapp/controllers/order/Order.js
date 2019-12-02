@@ -53,8 +53,8 @@ async function updateOrder(req, res, next) {
         const fieldToUpdate =  req.body
         const orderId = req.query.id
         const newProductInOrders = fieldToUpdate.productInOrder
+        const newOrder = Order.findOneAndUpdate({ _id: orderId }, fieldToUpdate, { new: true })
         const oldProductInOrders = await ProductInOrder.find({ orderId: orderId })
-        const newOrder = await Order.findOneAndUpdate({ _id: orderId }, fieldToUpdate, { new: true })
         oldProductInOrders.forEach(async product => {
             await ProductInOrder.findOneAndRemove({ _id: product._id })
         })
