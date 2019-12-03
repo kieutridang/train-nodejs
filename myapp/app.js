@@ -4,6 +4,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+const backUpSchedule = require('./cron-job-config')
+
 const mainRouter = require('./routes/Index');
 
 const app = express();
