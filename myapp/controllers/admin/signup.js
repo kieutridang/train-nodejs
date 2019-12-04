@@ -1,8 +1,8 @@
 const bcrypt = require('bcrypt');
-const Admin = require('../../models/Admin');
-const EmailValidator = require('../validators/EmailValidator')
-const validationErrorHandler = require('../error-handler/ValidationErrors').validationErrorHandler
-const ErrorCode = require('../error-handler/ValidationErrors').ErrorCode
+const Admin = require('../../models/admin');
+const EmailValidator = require('../validators/emailValidator')
+const validationErrorHandler = require('../error-handler/validationErrors').validationErrorHandler
+const ErrorCode = require('../error-handler/validationErrors').ErrorCode
 
 const saltRounds = 7
 

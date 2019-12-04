@@ -1,9 +1,9 @@
 var bcrypt = require('bcrypt')
 var jwt = require('jsonwebtoken')
-var Admin = require('../../models/Admin')
-var EmailValidator = require('../validators/EmailValidator')
-const validationErrorHandler = require('../error-handler/ValidationErrors').validationErrorHandler
-const ErrorCode = require('../error-handler/ValidationErrors').ErrorCode
+var Admin = require('../../models/admin')
+var EmailValidator = require('../validators/emailValidator')
+const validationErrorHandler = require('../error-handler/validationErrors').validationErrorHandler
+const ErrorCode = require('../error-handler/validationErrors').ErrorCode
 
 const privateKey = 'newPrivateKey'
 

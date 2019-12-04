@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { signup } = require('../controllers/admin/Signup');
-const login = require('../controllers/admin/Login');
+const { signup } = require('../controllers/admin/signup');
+const login = require('../controllers/admin/login');
 
 router.get('/log-in', login);
 

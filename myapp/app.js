@@ -6,7 +6,7 @@ const logger = require('morgan');
 
 const backUpSchedule = require('./cron-job-config')
 
-const mainRouter = require('./routes/Index');
+const mainRouter = require('./routes');
 
 const app = express();
 
