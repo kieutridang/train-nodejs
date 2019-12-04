@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const adminRouter = require('./Admin');
+const adminRouter = require('./admin');
 const productRouter = require('./Product');
 const orderRouter = require('./Order');
 
